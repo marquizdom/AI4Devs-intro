@@ -23,4 +23,15 @@ Cuando se pulse el botón Copy se copiará al portapapeles el resultado y aparec
 Puedes hacer que la aplicación sea todo en inglés?
 
 ## Comentarios sobre el código generado
-Correcto, ha traducido las cadenas en castellano al inglés correctamente sin tocar nada más.
+Correcto, ha traducido las cadenas en castellano al inglés y aplicado el "lang" al HTML correctamente sin tocar nada más.
+
+
+# Prompt 3 para refactorizar script.js y crear algunos test
+
+Podrías refactorizar script.js para usar funciones y poderlas testear? Generar también algunos test para estas funciones
+
+## Comentarios
+
+En el código generado se lanzan los test directamente, lo que causa que se visualice el resultado del test al acceder al índice.
+
+Además, al no haber pedido separar lógica de negocio de la presentación, las funciones extraídas y sus test contienen ambas.

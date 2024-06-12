@@ -6,18 +6,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     reverseButton.addEventListener('click', () => {
         const text = inputText.value;
-        const reversedText = text.split('').reverse().join('');
-        result.textContent = reversedText;
-        result.style.display = 'block';
-        copyButton.style.display = 'inline-block';
+        const reversedText = reverseString(text);
+        displayResult(reversedText);
     });
 
     copyButton.addEventListener('click', () => {
         const text = result.textContent;
-        navigator.clipboard.writeText(text).then(() => {
-            alert('Text copied!');
-        }).catch(err => {
-            console.error('Error copying text: ', err);
-        });
+        copyToClipboard(text);
     });
 });
+
+/**
+ * Function to reverse a given string.
+ * @param {string} str - The string to reverse.
+ * @return {string} - The reversed string.
+ */
+function reverseString(str) {
+    return str.split('').reverse().join('');
+}
+
+/**
+ * Function to display the reversed string and show the copy button.
+ * @param {string} text - The reversed string to display.
+ */
+function displayResult(text) {
+    const result = document.getElementById('result');
+    const copyButton = document.getElementById('copyButton');
+    result.textContent = text;
+    result.style.display = 'block';
+    copyButton.style.display = 'inline-block';
+}
+
+/**
+ * Function to copy text to clipboard and show an alert.
+ * @param {string} text - The text to copy to clipboard.
+ */
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        alert('Text copied!');
+    }).catch(err => {
+        console.error('Error copying text: ', err);
+    });
+}
