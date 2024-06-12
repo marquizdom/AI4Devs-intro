@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse String</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            max-width: 300px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        #reverseButton {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        #copyButton {
+            background-color: #6c757d;
+            color: white;
+            display: none;
+        }
+
+        #result {
+            margin-top: 10px;
+            font-size: 18px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reverse String</h1>
+    <input type="text" id="inputText" placeholder="Introduce tu texto aquí">
+    <button id="reverseButton">Reverse 🔄</button>
+    <div id="result"></div>
+    <button id="copyButton">Copy 📋</button>
+    <script src="script.js"></script>
+</body>
+</html>
