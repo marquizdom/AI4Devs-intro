@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     copyButton.addEventListener('click', () => {
         const text = result.textContent;
         navigator.clipboard.writeText(text).then(() => {
-            alert('Texto copiado!');
+            alert('Text copied!');
         }).catch(err => {
-            console.error('Error al copiar el texto: ', err);
+            console.error('Error copying text: ', err);
         });
     });
 });

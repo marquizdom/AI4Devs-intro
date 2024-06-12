@@ -17,3 +17,10 @@ Cuando se pulse el botón Copy se copiará al portapapeles el resultado y aparec
 
 ## Comentarios sobre el código generado
 - El idioma ha puesto "es" en vez de "en", aunque en el prompt se indicó que mostrase "Texto copiado!"
+
+
+# Prompt 2 para corregir el idioma
+Puedes hacer que la aplicación sea todo en inglés?
+
+## Comentarios sobre el código generado
+Correcto, ha traducido las cadenas en castellano al inglés correctamente sin tocar nada más.
