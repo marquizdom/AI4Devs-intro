@@ -71,4 +71,4 @@ La lógica de negocio y presentación deben estar separadas en el fichero Javasc
 Debe incluir tests para la lógica de negocio.
 
 ## Comentarios
-
+Ahora si parece correcto con todo lo anterior
