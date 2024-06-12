@@ -7,18 +7,7 @@ function testReverseString() {
     console.log('All reverseString tests passed');
 }
 
-// Mock function to test displayResult
-function testDisplayResult() {
-    const result = document.getElementById('result');
-    const copyButton = document.getElementById('copyButton');
-    displayResult('test');
-    console.assert(result.textContent === 'test', 'Test 1 Failed');
-    console.assert(result.style.display === 'block', 'Test 2 Failed');
-    console.assert(copyButton.style.display === 'inline-block', 'Test 3 Failed');
-    console.log('All displayResult tests passed');
-}
-
-// Test copyToClipboard function
+// Mock function to test copyToClipboard
 function testCopyToClipboard() {
     // This is a bit tricky to test due to the async nature of clipboard API
     // For a real test, you might need a mock of the navigator.clipboard object
@@ -27,5 +16,4 @@ function testCopyToClipboard() {
 
 // Run tests
 testReverseString();
-testDisplayResult();
 testCopyToClipboard();

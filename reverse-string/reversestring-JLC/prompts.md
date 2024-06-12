@@ -35,3 +35,13 @@ Podrías refactorizar script.js para usar funciones y poderlas testear? Generar 
 En el código generado se lanzan los test directamente, lo que causa que se visualice el resultado del test al acceder al índice.
 
 Además, al no haber pedido separar lógica de negocio de la presentación, las funciones extraídas y sus test contienen ambas.
+
+
+# Prompt 4: Separar lógica de negocio de la presentación
+
+El objetivo del refactor era separar la lógica de negocio de la presentación, por lo que las funciones creadas no deberían tocar diseño, solo la lógica. 
+Los test solo deben comprobar la lógica de negocio.
+
+## Comentarios
+
+Ahora ya no se muestra el resultado de los test y ha separado las lógicas correctamente, pero sigue ejecutando los test en el HTML principal.

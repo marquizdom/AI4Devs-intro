@@ -26,6 +26,18 @@ function reverseString(str) {
 }
 
 /**
+ * Function to copy text to clipboard.
+ * @param {string} text - The text to copy to clipboard.
+ */
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        alert('Text copied!');
+    }).catch(err => {
+        console.error('Error copying text: ', err);
+    });
+}
+
+/**
  * Function to display the reversed string and show the copy button.
  * @param {string} text - The reversed string to display.
  */
@@ -35,16 +47,4 @@ function displayResult(text) {
     result.textContent = text;
     result.style.display = 'block';
     copyButton.style.display = 'inline-block';
-}
-
-/**
- * Function to copy text to clipboard and show an alert.
- * @param {string} text - The text to copy to clipboard.
- */
-function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        alert('Text copied!');
-    }).catch(err => {
-        console.error('Error copying text: ', err);
-    });
 }
