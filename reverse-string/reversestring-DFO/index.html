@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse String</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 50px;
+        }
+        h1 {
+            color: black;
+            font-weight: bold;
+            font-size: 2.5em; /* Aumentado un 25% */
+        }
+        input {
+            padding: 10px;
+            font-size: 22.5px; /* Aumentado un 25% */
+            margin-bottom: 10px;
+            width: 300px;
+            font-weight: bold;
+            border-radius: 2mm; /* Esquinas curvas */
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 22.5px; /* Aumentado un 25% */
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .reverse-btn {
+            background-color: #3498db; /* Azul más oscuro */
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        .reverse-btn .icon-refresh {
+            margin-left: 10px;
+        }
+        .copy-btn {
+            background-color: #7f8c8d; /* Gris más oscuro */
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        .copy-btn .icon-copy {
+            margin-left: 10px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 25px; /* Aumentado un 25% */
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reverse String</h1>
+    <input type="text" id="inputText" placeholder="Enter text here..." onkeydown="handleKeyDown(event)">
+    <button class="reverse-btn" onclick="reverseString()">
+        Reverse <span class="icon-refresh">🔄</span>
+    </button>
+    <div class="result" id="resultText"></div>
+    <button class="copy-btn" onclick="copyToClipboard()">
+        Copy <span class="icon-copy">📋</span>
+    </button>
+    <script src="script.js"></script>
+</body>
+</html>
