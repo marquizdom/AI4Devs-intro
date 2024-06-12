@@ -1,50 +1,38 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const inputText = document.getElementById('inputText');
+document.addEventListener('DOMContentLoaded', function () {
+    const inputString = document.getElementById('inputString');
     const reverseButton = document.getElementById('reverseButton');
+    const resultContainer = document.getElementById('resultContainer');
+    const resultText = document.getElementById('resultText');
     const copyButton = document.getElementById('copyButton');
-    const result = document.getElementById('result');
 
-    reverseButton.addEventListener('click', () => {
-        const text = inputText.value;
-        const reversedText = reverseString(text);
-        displayResult(reversedText);
+    reverseButton.addEventListener('click', function () {
+        const reversedString = reverseString(inputString.value);
+        resultText.textContent = reversedString;
+        resultContainer.classList.remove('hidden');
     });
 
-    copyButton.addEventListener('click', () => {
-        const text = result.textContent;
-        copyToClipboard(text);
+    copyButton.addEventListener('click', function () {
+        copyToClipboard(resultText.textContent);
+        alert('Text copied!');
     });
 });
 
-/**
- * Function to reverse a given string.
- * @param {string} str - The string to reverse.
- * @return {string} - The reversed string.
- */
 function reverseString(str) {
     return str.split('').reverse().join('');
 }
 
-/**
- * Function to copy text to clipboard.
- * @param {string} text - The text to copy to clipboard.
- */
 function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        alert('Text copied!');
-    }).catch(err => {
-        console.error('Error copying text: ', err);
-    });
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
 }
 
-/**
- * Function to display the reversed string and show the copy button.
- * @param {string} text - The reversed string to display.
- */
-function displayResult(text) {
-    const result = document.getElementById('result');
-    const copyButton = document.getElementById('copyButton');
-    result.textContent = text;
-    result.style.display = 'block';
-    copyButton.style.display = 'inline-block';
-}
+// Tests
+console.assert(reverseString('AI4Devs') === 'sveD4IA', 'Test Case 1 Failed');
+console.assert(reverseString('OpenAI') === 'IAnepO', 'Test Case 2 Failed');
+console.assert(reverseString('') === '', 'Test Case 3 Failed');
+console.assert(reverseString('12345') === '54321', 'Test Case 4 Failed');
+console.assert(reverseString('a') === 'a', 'Test Case 5 Failed');
